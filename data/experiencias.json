@@ -1,0 +1,14 @@
+[
+  { "id": 1, "nombre": "Cenote Azul", "categoria": "naturaleza", "precio": 350, "cupo": 15, "icono": "&#127754;" },
+  { "id": 2, "nombre": "Zona arqueológica", "categoria": "cultura", "precio": 480, "cupo": 20, "icono": "&#128511;" },
+  { "id": 3, "nombre": "Ruta en tirolesa", "categoria": "aventura", "precio": 750, "cupo": 10, "icono": "&#127796;" },
+  { "id": 4, "nombre": "Reserva de tortugas", "categoria": "naturaleza", "precio": 420, "cupo": 18, "icono": "&#128034;" },
+  { "id": 5, "nombre": "Comunidad maya", "categoria": "cultura", "precio": 550, "cupo": 12, "icono": "&#127963;" },
+  { "id": 6, "nombre": "Kayak en manglar", "categoria": "aventura", "precio": 680, "cupo": 8, "icono": "&#128758;" },
+  { "id": 7, "nombre": "GP México", "categoria": "formula", "precio": 550, "cupo": 10, "icono": "&#127950;" },
+  { "id": 8, "nombre": "GP Baku", "categoria": "formula", "precio": 550, "cupo": 10, "icono": "&#127950;" },
+  { "id": 9, "nombre": "Tren Maya", "categoria": "aventura", "precio": 202, "cupo": 25, "icono": "&#128646;" },
+  { "id": 10, "nombre": "GP España", "categoria": "formula", "precio": 156, "cupo": 15, "icono": "&#127950;" },
+  { "id": 11, "nombre": "Snorkel en Arrecife", "categoria": "aventura", "precio": 520, "cupo": 12, "icono": "&#129416;" },
+  { "id": 12, "nombre": "Paseo en Catamarán", "categoria": "aventura", "precio": 890, "cupo": 15, "icono": "&#9973;" }
+]

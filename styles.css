@@ -1,0 +1,476 @@
+:root {
+    --primario: #E10600;
+    --secundario: #F1F1F1;
+    --oscuro: #15151E;
+    --claro: #FFFFFF;
+    --gris: #555555;
+    --peligro: #b3261e;
+    --exito: #2e7d32;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--oscuro);
+    background: #f4f8fb;
+}
+
+.encabezado {
+    min-height: 220px;
+    padding: 40px 8%;
+    display: flex;
+    align-items: center;
+    color: var(--claro);
+    background: linear-gradient(135deg, #15151E, #E10600);
+}
+
+.encabezado h1 {
+    margin: 0 0 8px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.encabezado p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.contenedor {
+    width: min(1100px, 90%);
+    margin: 30px auto;
+}
+
+.mensaje-feedback {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.mensaje-feedback.error {
+    background-color: #fde8e8;
+    color: var(--peligro);
+    border: 1px solid var(--peligro);
+}
+
+.mensaje-feedback.exito {
+    background-color: #e8f5e9;
+    color: var(--exito);
+    border: 1px solid var(--exito);
+}
+
+.mensaje-feedback.oculto {
+    display: none;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.panel h2 {
+    margin-bottom: 5px;
+}
+
+#contador {
+    color: var(--gris);
+}
+
+.controles {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#buscador, #filtroPrecio {
+    padding: 10px 15px;
+    border: 1px solid var(--primario);
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+#buscador {
+    width: 180px;
+}
+
+.control-precio {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: var(--gris);
+}
+
+#filtroPrecio {
+    width: 90px;
+}
+
+#buscador:focus, #filtroPrecio:focus {
+    border-color: #E10600;
+    box-shadow: 0 0 5px #E1060055;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+button {
+    padding: 10px 16px;
+    border: 1px solid var(--primario);
+    border-radius: 20px;
+    background: var(--claro);
+    color: var(--primario);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover, button.activo {
+    background: var(--primario);
+    color: var(--claro);
+}
+
+#ordenarPrecio {
+    white-space: nowrap;
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tarjeta {
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--claro);
+    box-shadow: 0 4px 12px #00000018;
+    border: 1px solid #e0f2f1;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.imagen {
+    min-height: 130px;
+    display: grid;
+    place-items: center;
+    background: var(--secundario);
+    font-size: 3.5rem;
+}
+
+.informacion {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.etiqueta {
+    color: var(--primario);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.informacion h3 {
+    margin: 8px 0;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primario);
+    margin: 4px 0;
+}
+
+.cupo {
+    font-size: 0.85rem;
+    color: var(--gris);
+    margin-bottom: 12px;
+}
+
+.acciones-tarjeta {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-personas {
+    width: 65px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.btn-reservar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E10600, #b80500);
+    color: var(--claro);
+    border: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px rgba(225, 6, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.btn-reservar:hover {
+    background: linear-gradient(135deg, #ff1a14, #c90000);
+    box-shadow: 0 4px 10px rgba(225, 6, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.btn-reservar:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(225, 6, 0, 0.3);
+}
+
+.sin-resultados, .sin-reservas {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: var(--gris);
+    background: white;
+    border-radius: 14px;
+}
+
+.resumen {
+    margin-top: 35px;
+    padding: 25px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px #00000018;
+}
+
+.resumen-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--secundario);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.resumen-encabezado h2 {
+    margin: 0;
+}
+
+.btn-vaciar {
+    background: transparent;
+    border: 1px solid var(--peligro);
+    color: var(--peligro);
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-vaciar:hover {
+    background: var(--peligro);
+    color: var(--claro);
+}
+
+.item-reserva {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-reserva-info h4 {
+    margin: 0 0 4px 0;
+}
+
+.item-reserva-info p {
+    margin: 0;
+    color: var(--gris);
+    font-size: 0.9rem;
+}
+
+.item-reserva-acciones {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.controles-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-cantidad {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--primario);
+    background: white;
+    color: var(--primario);
+    font-weight: bold;
+}
+
+.btn-eliminar {
+    background: var(--peligro);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+}
+
+.resumen-totales {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.total {
+    font-size: 1.3rem;
+    color: var(--primario);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background: var(--claro);
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-contenido h3 {
+    margin-top: 0;
+    color: var(--oscuro);
+}
+
+.modal-acciones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-cancelar {
+    background: #ccc;
+    color: var(--oscuro);
+    border: none;
+}
+
+.btn-confirmar {
+    background: var(--peligro);
+    color: white;
+    border: none;
+}
+
+.oculto {
+    display: none !important;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--claro);
+    background: var(--oscuro);
+    margin-top: 40px;
+}
+
+@media (max-width: 850px) {
+    .catalogo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .panel {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .controles {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    #buscador {
+        flex: 1;
+        width: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+    .encabezado {
+        min-height: 180px;
+        padding: 30px 5%;
+    }
+    .filtros button {
+        flex: 1;
+    }
+    .controles {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #buscador, #filtroPrecio, #ordenarPrecio {
+        width: 100%;
+    }
+    .control-precio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .item-reserva {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .item-reserva-acciones {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .resumen-totales {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+}

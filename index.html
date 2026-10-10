@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora Riviera Maya</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div>
+            <h1>Explora Riviera Maya</h1>
+            <p>Experiencias naturales y culturales</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <div id="mensajeFeedback" class="mensaje-feedback oculto"></div>
+
+        <section class="panel">
+            <div>
+                <h2>Experiencias disponibles</h2>
+                <p id="contador">Cargando experiencias...</p>
+            </div>
+            <div class="controles">
+                <input type="text" id="buscador" placeholder="Buscar experiencia...">
+                
+                <div class="control-precio">
+                    <label for="filtroPrecio">Precio máx:</label>
+                    <input type="number" id="filtroPrecio" placeholder="Ej. 600" min="0">
+                </div>
+
+                <button id="ordenarPrecio">Menor precio</button>
+            </div>
+        </section>
+
+        <section class="filtros" aria-label="Filtros del catálogo">
+            <button class="activo" data-categoria="todas">Todas</button>
+            <button data-categoria="naturaleza">Naturaleza</button>
+            <button data-categoria="cultura">Cultura</button>
+            <button data-categoria="aventura">Aventura</button>
+            <button data-categoria="formula">Formula 1</button>
+        </section>
+
+        <section id="catalogo" class="catalogo"></section>
+
+        <section class="resumen">
+            <div class="resumen-encabezado">
+                <h2>Mi reservación</h2>
+                <button id="btnVaciar" class="btn-vaciar">Vaciar reservación</button>
+            </div>
+            
+            <div id="listaReservas">
+                <p class="sin-reservas">No hay experiencias seleccionadas.</p>
+            </div>
+
+            <div class="resumen-totales">
+                <p>Total de personas: <span id="totalPersonas">0</span></p>
+                <p class="total">Total: <span id="totalMonto">$0 MXN</span></p>
+            </div>
+        </section>
+    </main>
+
+    <div id="modalConfirmar" class="modal-overlay oculto">
+        <div class="modal-contenido">
+            <h3>¿Vaciar reservación?</h3>
+            <p>¿Estás seguro de que deseas eliminar todas las experiencias seleccionadas?</p>
+            <div class="modal-acciones">
+                <button id="btnCancelarVaciar" class="btn-cancelar">Cancelar</button>
+                <button id="btnConfirmarVaciar" class="btn-confirmar">Sí, vaciar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalVacioTiempo" class="modal-overlay oculto">
+        <div class="modal-contenido">
+            <h3>Reservación vacía</h3>
+            <p>No tienes experiencias agregadas en tu reservación para borrar.</p>
+            <p style="font-size: 0.85rem; color: var(--gris); margin-top: 10px;">
+                Este aviso se cerrará en <strong id="contadorTiempo">3</strong> segundos...
+            </p>
+            <div class="modal-acciones">
+                <button id="btnCerrarAviso" class="btn-cancelar">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Proyecto académico de desarrollo front-end</p>
+    </footer>
+</body>
+</html>
